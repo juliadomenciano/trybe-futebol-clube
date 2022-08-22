@@ -9,6 +9,11 @@ export default class JwtService {
 
   static validateToken(token: string): IPayload {
     const payload = verify(token, process.env.JWT_SECRET as string);
+    if (!payload) {
+      const e = new Error('Token must be a valid token');
+      e.name = 'Authorization';
+      throw e;
+    }
     return payload as IPayload;
   }
 }

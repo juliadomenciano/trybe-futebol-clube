@@ -21,7 +21,7 @@ export default (err: IError, _req: Request, res: Response, _next: NextFunction) 
       return res.status(422).json({ message });
       break;
     default:
-      return res.status(500).json({ message });
+      return res.status(401).json({ message: 'Token must be a valid token' });
       break;
   }
 };
