@@ -28,8 +28,8 @@ class MatchService {
 
   create = async (data: IMatch): Promise<Match> => {
     const { homeTeam, awayTeam } = data;
-    const homeId = await Match.findByPk(homeTeam);
-    const awayId = await Match.findByPk(awayTeam);
+    const homeId = await Team.findByPk(homeTeam);
+    const awayId = await Team.findByPk(awayTeam);
     console.log(homeId);
     if (!homeId || !awayId) {
       const e = new Error('There is no team with such id!');

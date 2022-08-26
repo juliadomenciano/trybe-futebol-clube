@@ -10,8 +10,8 @@ class AuthService {
       e.name = 'Authorization';
       throw e;
     }
-    const DecryptPassword = await compare(userPassword, getUser.password);
-    if (!DecryptPassword) {
+    const decryptPassword = await compare(userPassword, getUser.password);
+    if (!decryptPassword) {
       const e = new Error('Incorrect email or password');
       e.name = 'Authorization';
       throw e;

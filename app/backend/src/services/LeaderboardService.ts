@@ -1,19 +1,7 @@
 /* eslint-disable max-lines-per-function */
 import Team from '../database/models/team';
 import Match from '../database/models/match';
-
-interface ILeaderboard {
-  name: string;
-  totalPoints: number;
-  totalGames: number;
-  totalVictories: number;
-  totalDraws: number;
-  totalLosses: number;
-  goalsFavor: number;
-  goalsOwn: number;
-  goalsBalance: number;
-  efficiency: number;
-}
+import ILeaderboard from '../interfaces/ILeaderboard';
 
 class LeaderboardService {
   findAll = async ():Promise<ILeaderboard[]> => {
@@ -67,7 +55,8 @@ class LeaderboardService {
         efficiency: Number(((totalPoints / (totalGames * 3)) * 100).toFixed(2)),
       };
     }));
-    const sort1 = leaderboard.sort((a, b) => b.totalVictories - a.totalVictories
+    const sort1 = leaderboard.sort((a, b) => b.totalPoints - a.totalPoints
+    || b.totalVictories - a.totalVictories
     || b.goalsBalance - a.goalsBalance
     || b.goalsOwn - a.goalsOwn);
 
@@ -76,3 +65,9 @@ class LeaderboardService {
 }
 
 export default LeaderboardService;
+
+// const sort1 = leaderboard.sort((a, b) => b.totalPoints - a.totalPoints);
+// const sort1 = leaderboard.sort((a, b) => b.totalVictories - a.totalVictories);
+// const sort2 = sort1.sort((a, b) => b.goalsBalance - a.goalsBalance);
+// const sort3 = sort2.sort((a, b) => b.goalsOwn - a.goalsOwn);
+// return sort3;
