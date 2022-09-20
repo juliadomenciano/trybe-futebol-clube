@@ -13,7 +13,7 @@ A dockerized back-end was developed using data modeling through Sequelize for a 
    * Chai.js;
    * Mocha.js;
    * Sinon.js;
-   * POO;
+   * OOP;
    * SOLID;
    * Docker.
 
