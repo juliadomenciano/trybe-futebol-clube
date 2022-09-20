@@ -39,8 +39,6 @@ class LeaderboardService {
       const totalDraws = homeDraws.length + awayDraws.length;
 
       const totalPoints = (totalVictories * 3) + totalDraws;
-      // const efficiency = Number(((totalPoints / (totalGames * 3)) * 100).toFixed(2));
-      // console.log(efficiency);
 
       return {
         name: item.teamName,
@@ -65,9 +63,3 @@ class LeaderboardService {
 }
 
 export default LeaderboardService;
-
-// const sort1 = leaderboard.sort((a, b) => b.totalPoints - a.totalPoints);
-// const sort1 = leaderboard.sort((a, b) => b.totalVictories - a.totalVictories);
-// const sort2 = sort1.sort((a, b) => b.goalsBalance - a.goalsBalance);
-// const sort3 = sort2.sort((a, b) => b.goalsOwn - a.goalsOwn);
-// return sort3;

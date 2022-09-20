@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import LeaderboardService from '../services/LeaderboardService';
-// import JwtService from '../services/JwtService';
 
 class LeaderboardController {
   public service: LeaderboardService;

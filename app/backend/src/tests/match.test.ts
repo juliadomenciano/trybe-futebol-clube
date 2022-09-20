@@ -128,7 +128,7 @@ describe('Match', () => {
     })
   })
 
-  describe.only('create', () => {
+  describe('create', () => {
     beforeEach(() =>{
       sinon.stub(JwtService, "validateToken").resolves()
       sinon.stub(Team, "findByPk").resolves(homeTeam as ITeam as Team)

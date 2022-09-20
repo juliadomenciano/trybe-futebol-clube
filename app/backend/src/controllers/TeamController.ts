@@ -20,16 +20,6 @@ class TeamController {
     return res.status(200).json(team);
   }
 
-  // async validation(req: Request, res: Response): Promise<Response> {
-  //   const { authorization } = req.headers;
-  //   if (!authorization) {
-  //     const e = new Error('Invalid token');
-  //     e.name = 'Authorization';
-  //     throw e;
-  //   }
-  //   const role = await this.service.validation(authorization);
-  //   return res.status(200).json({ role });
-  // }
 }
 
 export = TeamController;
